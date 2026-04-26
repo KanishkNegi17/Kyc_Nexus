@@ -40,11 +40,12 @@ DATABASES = {
 
 # CORS (Allow your future live React app to talk to Django)
 CORS_ALLOWED_ORIGINS = [
-    "https://your-frontend-name.onrender.com",
+    "https://kyc-nexus-kappa.vercel.app",
     "http://localhost:5173",
 ]
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
+    "https://kyc-nexus-kappa.vercel.app",
     "https://kanishknegi.pythonanywhere.com"
 ]
 # Application definition
