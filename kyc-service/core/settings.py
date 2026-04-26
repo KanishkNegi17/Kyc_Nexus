@@ -39,10 +39,12 @@ DATABASES = {
 }
 
 # CORS (Allow your future live React app to talk to Django)
-CORS_ALLOWED_ORIGINS = [
-    "https://kyc-nexus-kappa.vercel.app",
-    "http://localhost:5173",
-]
+CORS_ALLOWED_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOWED_ORIGINS = [
+#     "https://kyc-nexus-kappa.vercel.app",
+#     "http://localhost:5173",
+# ]
 CORS_ALLOW_HEADERS = [
     "accept",
     "accept-encoding",
