@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,13 +25,24 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-ti+p8cbnic5fi-qyb4w4z4-f#@-i0z-bd1@%r$ae)q@gg&nz02"
+SECRET_KEY = os.environ.get('SECRET_KEY', "django-insecure-ti+p8cbnic5fi-qyb4w4z4-f#@-i0z-bd1@%r$ae)q@gg&nz02")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
+DATABASES = {
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL', f"sqlite:///{BASE_DIR / 'db.sqlite3'}")
+    )
+}
+
+# CORS (Allow your future live React app to talk to Django)
+CORS_ALLOWED_ORIGINS = [
+    "https://your-frontend-name.onrender.com",
+    "http://localhost:5173",
+]
 
 # Application definition
 
