@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', "django-insecure-ti+p8cbnic5fi-qyb4w4z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kanishknegi.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 DATABASES = {
     'default': dj_database_url.config(
