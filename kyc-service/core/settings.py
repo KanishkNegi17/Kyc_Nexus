@@ -43,7 +43,10 @@ CORS_ALLOWED_ORIGINS = [
     "https://your-frontend-name.onrender.com",
     "http://localhost:5173",
 ]
-
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",
+    "https://kanishknegi.pythonanywhere.com"
+]
 # Application definition
 
 INSTALLED_APPS = [
