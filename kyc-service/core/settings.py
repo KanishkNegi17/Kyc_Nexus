@@ -30,7 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', "django-insecure-ti+p8cbnic5fi-qyb4w4z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kanishknegi.pythonanywhere.com', 'localhost', '127.0.0.1']
+# ALLOWED_HOSTS = ['kanishknegi.pythonanywhere.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     'default': dj_database_url.config(
@@ -41,21 +42,15 @@ DATABASES = {
 # CORS (Allow your future live React app to talk to Django)
 # CORS_ALLOWED_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = [
-    "https://kyc-nexus-kappa.vercel.app",
-    "http://localhost:5173",
-]
-CORS_ALLOW_HEADERS = [
-    "accept",
-    "accept-encoding",
-    "authorization",
-    "content-type",
-    "dnt",
-    "origin",
-    "user-agent",
-    "x-csrftoken",
-    "x-requested-with",
-]
+CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOWED_ORIGINS = [
+#     "https://kyc-nexus-kappa.vercel.app",
+#     "http://localhost:5173",
+# ]
+CORS_ALLOW_HEADERS = ['*']
+
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
